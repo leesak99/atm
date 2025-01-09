@@ -17,8 +17,7 @@ while True:
         break
     if num == "1":
         deposit_amount = (input("입금할 금액을 입력해주세요 : ")) #숫자 : 1000 -> input -> 문자:1000 -> deposit_amount
-        if deposit_amount.isdigit() and int(deposit_amount) > 0:  #1000 - true천원 - false1
-            
+        if deposit_amount.isdigit() and int(deposit_amount) > 0:  #1000 - true천원 - false13
             balance = balance + int(deposit_amount) # balance += deposit_amount
             receipts.append(("입금", deposit_amount, balance))
             print(f"입금하신 금액은 {deposit_amount}원이고, 현재 잔액은 {balance}원 입니다.")
@@ -30,7 +29,15 @@ while True:
         balance -= withdraw_amount 
         receipts.append(("출금", withdraw_amount, balance))
         print(f"출금하신 금액은 {withdraw_amount}원이고, 현재 잔액은 {balance}원 입니다.")
+    if num == "3":
+        if receipts :
+            print("===영수증===")
+            for i in receipts: #
+                print(f"{i[0]}: {i[1]}원 | 잔액 : {i[2]} 원.")
+        else:
+            print("영수증 내역이 없습니다.")
 
+        
 print(f"서비스를 종료합니다.현재 잔액1은{balance}원입니다.")
 
 
